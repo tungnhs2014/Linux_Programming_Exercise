@@ -1,0 +1,3 @@
+# Exercise 5 for process
+
+- Từ kiến thức đã học, sử dụng SIGCHLD để ngăn ngừa việc hình thành zombie process.
