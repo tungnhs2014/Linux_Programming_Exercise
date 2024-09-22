@@ -35,13 +35,13 @@ int main(int argc, char const *argv[])
         if (child_pid == 0) {
             // Do something
             printf("I am Child\n"); // reader
-            //if (close(fds[1]) == -1) // write end is unused
+            // if (close(fds[1]) == -1) // write end is unused
             //    printf("close(fds[1]) failed\n");
             
             // Suspend if no data
             while (1 ) {
                 num_read = read(fds[0], in_buff, MSG_SIZE);
-                printf("unblock read()]\n");
+                // printf("unblock read()]\n");
                 if (num_read == -1) {
                     printf("read() failed\n");
                     exit(0);
@@ -50,6 +50,7 @@ int main(int argc, char const *argv[])
                     break;
                 } else {
                     printf("msg: %s\n", in_buff);
+                    // break;
                 }
             };
 
